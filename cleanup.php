@@ -1,0 +1,1 @@
+<?php unlink('bridge.php'); unlink('cleanup.php'); echo 'Cleaned'; ?>
