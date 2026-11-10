@@ -19,3 +19,31 @@
 .masonry-item img{min-height:100px}
 .gallery-load-error{padding:32px;border:1px solid rgba(255,255,255,.18);color:#aeb7c3;text-align:center;break-inside:avoid}
 @media(max-width:520px){.preview-lightbox .lightbox-full-link{right:50%;transform:translateX(50%);bottom:56px;white-space:nowrap}.preview-lightbox .lightbox-count{bottom:25px}}
+
+
+/* Elevation brand colour rebalance: gold leads, blue supports */
+:root{
+  --blue:#397fb7;
+  --gold:#c7a66a;
+}
+::selection{background:var(--gold);color:#090b0f}
+.eyebrow:before{background:var(--gold)}
+.blue{color:var(--gold)!important}
+.btn.primary{background:var(--gold);border-color:var(--gold);color:#090b0f}
+.btn.primary:hover{background:#fff;border-color:#fff;color:#090b0f}
+.nav-links a:hover{color:var(--gold)}
+.hero h1 span{color:var(--gold)}
+.service-number{color:#78a9d2}
+.service-arrow{color:var(--gold)}
+.director-image:after{border-color:rgba(199,166,106,.62)}
+.director-copy .blue{color:var(--gold)!important}
+.field input:focus,.field textarea:focus{border-color:var(--gold)}
+.form-status{color:var(--gold)}
+.gallery-page-hero{background:linear-gradient(120deg,#090b0f 0%,#121820 72%,#17212a 100%)}
+.preview-grid .preview-image:focus-visible,
+.btn:focus-visible,
+a:focus-visible,
+button:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+@media(hover:hover){
+  .service-card:hover .service-number{color:var(--gold)}
+}
