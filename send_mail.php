@@ -2,8 +2,18 @@
 declare(strict_types=1);
 header('Content-Type: application/json; charset=utf-8');
 header('X-Content-Type-Options: nosniff');
+header('X-Frame-Options: DENY');
+header('Referrer-Policy: strict-origin-when-cross-origin');
+header('Cache-Control: no-store, max-age=0');
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') { http_response_code(405); echo json_encode(['message'=>'Method not allowed.']); exit; }
 if (!empty($_POST['website'])) { http_response_code(200); echo json_encode(['message'=>'Thank you. Your enquiry has been received.']); exit; }
+session_set_cookie_params([
+    'lifetime' => 0,
+    'path' => '/',
+    'secure' => true,
+    'httponly' => true,
+    'samesite' => 'Lax'
+]);
 session_start();
 $now = time();
 if (isset($_SESSION['last_enquiry']) && ($now - (int)$_SESSION['last_enquiry']) < 20) { http_response_code(429); echo json_encode(['message'=>'Please wait a moment before sending another enquiry.']); exit; }
