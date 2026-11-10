@@ -47,3 +47,47 @@ button:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
 @media(hover:hover){
   .service-card:hover .service-number{color:var(--gold)}
 }
+
+
+/* Typography and enquiry form refinement */
+.hero h1 span,
+.intro h2 span,
+.director-copy h2 span,
+.section-head h2 span,
+.contact h2 span,
+.gallery-page-hero h1 span{
+  font-style:italic;
+}
+.service-card h3{
+  text-transform:none;
+}
+.contact-form .field input,
+.contact-form .field textarea,
+.contact-form .field select{
+  width:100%;
+  min-height:52px;
+  padding:15px 16px;
+  border:1px solid rgba(255,255,255,.2);
+  border-radius:2px;
+  background:rgba(255,255,255,.025);
+  color:#f5f3ee;
+  outline:none;
+  transition:border-color .25s,background .25s;
+}
+.contact-form .field textarea{
+  min-height:140px;
+  resize:vertical;
+}
+.contact-form .field input::placeholder,
+.contact-form .field textarea::placeholder{
+  color:#7f8792;
+}
+.contact-form .field input:focus,
+.contact-form .field textarea:focus,
+.contact-form .field select:focus{
+  border-color:var(--gold);
+  background:rgba(199,166,106,.045);
+}
+.contact-form .field label{
+  color:#c6c0b4;
+}
