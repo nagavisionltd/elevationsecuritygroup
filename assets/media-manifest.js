@@ -23,10 +23,10 @@
   {id:'photo-march-2026',type:'image',src:'gallery/2026-gallery/IMG-20260321-WA0047.jpg',alt:'Security team member at an MMA event',gallery:true,home:false,galleryOrder:16},
   {id:'photo-poster-dec-2026',type:'image',src:'gallery/2026-gallery/IMG-20261007-WA0002.jpg',alt:'Boxing event promotional poster',gallery:true,home:false,galleryOrder:17},
   {id:'photo-event-sept-2026',type:'image',src:'gallery/2026-gallery/IMG-20261009-WA0019.jpg',alt:'Boxing event promotional display',gallery:true,home:true,galleryOrder:18,homeOrder:12}
-  ,{id:'photo-06',type:'image',src:'gallery/2026-gallery/gallery-6.webp',alt:'Close protection at a live event',gallery:true,home:false,galleryOrder:19}
-  ,{id:'photo-09',type:'image',src:'gallery/2026-gallery/gallery-9.webp',alt:'Boxing and MMA event security',gallery:true,home:false,galleryOrder:20}
-  ,{id:'photo-12',type:'image',src:'gallery/2026-gallery/gallery-12.webp',alt:'Door supervision at a venue',gallery:true,home:false,galleryOrder:21}
-  ,{id:'photo-13',type:'image',src:'gallery/2026-gallery/gallery-13.webp',alt:'Festival and event security',gallery:true,home:false,galleryOrder:22}
+  ,{id:'photo-06',type:'image',src:'gallery/gallery-6-close-protection.webp',alt:'Close protection at a live event',gallery:true,home:false,galleryOrder:19}
+  ,{id:'photo-09',type:'image',src:'gallery/gallery-9-boxing-mma.webp',alt:'Boxing and MMA event security',gallery:true,home:false,galleryOrder:20}
+  ,{id:'photo-12',type:'image',src:'gallery/gallery-12-door-supervision.webp',alt:'Door supervision at a venue',gallery:true,home:false,galleryOrder:21}
+  ,{id:'photo-13',type:'image',src:'gallery/gallery-13-festival-event-security.webp',alt:'Festival and event security',gallery:true,home:false,galleryOrder:22}
   ,{id:'legacy-photo-01',type:'image',src:'https://d2ol7oe51mr4n9.cloudfront.net/user_2yq6Y1r3xmBXQKJnyWl4fPnzRV5/e7e5b017-c809-400e-a74a-2c095cc8afd3.jpg',alt:'Elevation Security Group field photography',gallery:true,home:false,galleryOrder:23}
   ,{id:'legacy-photo-02',type:'image',src:'https://d2ol7oe51mr4n9.cloudfront.net/user_2yq6Y1r3xmBXQKJnyWl4fPnzRV5/5ad860df-228e-40bc-a67c-5f35110c9309.jpg',alt:'Elevation Security Group field photography',gallery:true,home:false,galleryOrder:24}
  ];
