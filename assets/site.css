@@ -269,3 +269,12 @@ button:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
 #gallery-grid .gallery-video-tile .gallery-tile-play{
   z-index:2;
 }
+
+
+/* Keep the director layout's tracks shrinkable and its children inside the available width. */
+.director-grid{grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr)}
+.director-grid>*{min-width:0}
+@media(max-width:850px){.director-grid{grid-template-columns:minmax(0,1fr)}}
+
+/* Reveal animations may briefly travel beyond the viewport; clip that motion without disabling the gallery rail's own horizontal scrolling. */
+html,body{overflow-x:clip}
