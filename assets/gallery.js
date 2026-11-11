@@ -60,10 +60,9 @@
   if(gsap){
    gsap.killTweensOf([box,stage,caption]);
    gsap.set(box,{autoAlpha:0});
-   gsap.set(stage,{scale:.975,y:18,transformOrigin:'50% 50%'});
+   gsap.set(stage,{scale:1,y:0,transformOrigin:'50% 50%'});
    gsap.set(caption,{autoAlpha:0,y:12});
    gsap.to(box,{autoAlpha:1,duration:.3,ease:'power1.out'});
-   gsap.to(stage,{scale:1,y:0,duration:.72,ease:'power3.out'});
    gsap.to(caption,{autoAlpha:1,y:0,duration:.5,delay:.16,ease:'power2.out'});
    await flipFromTile(tile,item);
   }
