@@ -14,7 +14,7 @@
   naturalWidth=grid.offsetWidth;naturalHeight=grid.offsetHeight;
   const margin=window.innerWidth<700?34:64;
   scale=Math.min(1,(window.innerWidth-margin*2)/naturalWidth,(window.innerHeight-margin*2)/naturalHeight);
-  scale=clamp(scale,.28,1);
+  scale=clamp(scale,.12,1);
   x=(window.innerWidth-naturalWidth*scale)/2;
   y=(window.innerHeight-naturalHeight*scale)/2;
   if(gsap&&!reduce)gsap.to(grid,{x,y,scale,duration:.7,ease:'power3.out',overwrite:true});
@@ -48,7 +48,7 @@
   ui.querySelector('[data-zoom="in"]').addEventListener('click',()=>zoomAt(scale*1.2));
   ui.querySelector('[data-zoom="fit"]').addEventListener('click',fit);
   ui.querySelector('.gallery-canvas-close').addEventListener('click',close);
-  requestAnimationFrame(()=>{fit();});
+  requestAnimationFrame(()=>{naturalWidth=grid.offsetWidth;naturalHeight=grid.offsetHeight;scale=window.innerWidth<700?.86:.6;x=(window.innerWidth-naturalWidth*scale)/2;y=(window.innerHeight-naturalHeight*scale)/2;if(gsap&&!reduce)gsap.fromTo(grid,{autoAlpha:0,x,y,scale},{autoAlpha:1,x,y,scale,duration:.65,ease:'power3.out',clearProps:'autoAlpha'});else set();updatePercent();});
  };
  trigger.addEventListener('click',open);
  viewport.addEventListener('pointerdown',e=>{
