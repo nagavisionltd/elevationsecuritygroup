@@ -126,3 +126,28 @@ button:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
 .preview-grid .preview-image img{object-fit:contain;object-position:center;background:#e4e6e8}
 @media(max-width:850px){.preview-grid .preview-image{flex-basis:min(76vw,390px);height:260px}}
 @media(max-width:520px){.preview-grid{gap:12px;padding-bottom:16px}.preview-grid .preview-image{flex-basis:82vw;height:250px}.preview-grid .preview-image img{object-fit:contain}}
+
+/* Homepage media rail and cinematic BigKodez-inspired viewer */
+.gallery-preview-rail{display:flex;flex-wrap:nowrap;gap:14px;overflow-x:auto;overflow-y:hidden;padding:2px 2px 18px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:var(--gold) rgba(0,0,0,.12)}
+.gallery-preview-rail .preview-image{position:relative;flex:0 0 clamp(280px,29vw,390px);width:auto;height:clamp(220px,23vw,310px);aspect-ratio:4/3;overflow:hidden;scroll-snap-align:start;background:#111820}
+.gallery-preview-rail .preview-image img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;transition:transform .7s,filter .5s;filter:saturate(.86)}
+.gallery-preview-rail .preview-image:hover img{transform:scale(1.055);filter:saturate(1)}
+.gallery-preview-rail .preview-image:after{content:"↗";position:absolute;right:16px;bottom:12px;color:#fff;font-size:22px;text-shadow:0 1px 8px #000}
+.gallery-preview-rail .preview-image .preview-play{position:absolute;inset:0;display:grid;place-items:center;color:#fff;font-size:18px;text-shadow:0 2px 12px #000;background:linear-gradient(0deg,rgba(0,0,0,.28),transparent 65%)}
+.gallery-preview-rail .preview-play:before{content:"";position:absolute;width:56px;height:56px;border:1px solid rgba(255,255,255,.85);border-radius:50%;background:rgba(8,10,14,.42);backdrop-filter:blur(8px)}
+.gallery-preview-rail .preview-play{z-index:1}
+.preview-lightbox{padding:0;background:rgba(3,5,8,.97);backdrop-filter:blur(18px);flex-direction:column;gap:0}
+.preview-lightbox.open{display:flex}
+.preview-lightbox .preview-stage{width:min(88vw,1320px);height:min(78vh,820px);display:grid;place-items:center;position:relative}
+.preview-lightbox .preview-stage img,.preview-lightbox .preview-stage video{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;box-shadow:0 24px 100px rgba(0,0,0,.45)}
+.preview-lightbox .preview-stage video{width:100%;height:100%;background:#000}
+.preview-lightbox .preview-stage [hidden]{display:none!important}
+.preview-lightbox .lightbox-close{top:24px;right:28px;width:48px;height:48px;border:1px solid rgba(255,255,255,.25);border-radius:50%;font-size:30px;line-height:1;background:rgba(255,255,255,.06);backdrop-filter:blur(12px);z-index:3}
+.preview-lightbox .lightbox-prev,.preview-lightbox .lightbox-next{top:50%;width:48px;height:48px;border:1px solid rgba(255,255,255,.25);border-radius:50%;font-size:34px;line-height:1;background:rgba(255,255,255,.06);backdrop-filter:blur(12px);z-index:3}
+.preview-lightbox .lightbox-prev{left:24px}.preview-lightbox .lightbox-next{right:24px}
+.preview-caption{width:min(88vw,1320px);display:flex;align-items:center;justify-content:space-between;gap:20px;padding:24px 0;color:#aab3c0}
+.preview-lightbox .lightbox-count{position:static;transform:none;font-size:11px;letter-spacing:.18em;color:#fff}
+.preview-lightbox .preview-media-label{font-size:9px;letter-spacing:.22em;color:#8e99a8}
+.preview-lightbox .lightbox-full-link{position:static;color:var(--gold);font-size:10px;letter-spacing:.14em;text-transform:uppercase;border-bottom:1px solid rgba(199,166,106,.6);padding-bottom:7px;white-space:nowrap}
+@media(max-width:850px){.gallery-preview-rail .preview-image{flex-basis:76vw;height:250px}.preview-lightbox .preview-stage{width:100vw;height:72svh}.preview-lightbox .lightbox-prev{left:10px}.preview-lightbox .lightbox-next{right:10px}.preview-caption{width:calc(100% - 36px);padding:18px 0}}
+@media(max-width:520px){.gallery-preview-rail{gap:10px}.gallery-preview-rail .preview-image{flex-basis:84vw;height:245px}.preview-lightbox .preview-stage{height:68svh}.preview-lightbox .lightbox-close{top:14px;right:14px}.preview-lightbox .lightbox-prev,.preview-lightbox .lightbox-next{width:40px;height:40px;font-size:28px}.preview-caption{gap:10px}.preview-lightbox .preview-media-label{display:none}.preview-lightbox .lightbox-full-link{font-size:9px}}
