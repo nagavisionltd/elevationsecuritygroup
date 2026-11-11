@@ -3,7 +3,7 @@
  if(!grid||!box)return;
  const base=new URL('./gallery/2026-gallery/',document.baseURI);
  const photos=['gallery-2.webp','gallery-3.webp','gallery-4.webp','gallery-5.webp','gallery-6.webp','gallery-7.webp','gallery-8.webp','gallery-9.webp','gallery-10.webp','gallery-11.webp','gallery-12.webp','gallery-13.webp','IMG-20260321-WA0047.jpg','IMG-20261007-WA0002.jpg','IMG-20261009-WA0019.jpg'];
- const videos=['VID-20261009-WA0014.mp4','VID-20261009-WA0015.mp4','VID-20261009-WA0016.mp4','VID-20261009-WA0017.mp4','VID-20261009-WA0018.mp4','VID-20261009-WA0020.mp4','WhatsApp Video 2026-11-10 at 5.17.16 PM.mp4','operations.mp4'];
+ const videos=[{file:'VID-20261009-WA0014.mp4',poster:'gallery-6.webp'},{file:'VID-20261009-WA0015.mp4',poster:'gallery-7.webp'},{file:'VID-20261009-WA0016.mp4',poster:'gallery-8.webp'},{file:'VID-20261009-WA0017.mp4',poster:'gallery-9.webp'},{file:'VID-20261009-WA0018.mp4',poster:'gallery-10.webp'},{file:'VID-20261009-WA0020.mp4',poster:'gallery-11.webp'},{file:'WhatsApp Video 2026-11-10 at 5.17.16 PM.mp4',poster:'gallery-12.webp'},{file:'operations.mp4',poster:'gallery-13.webp'}];
  const url=n=>new URL(encodeURIComponent(n),base).href;
  grid.classList.add('gallery-rail');
  const lightboxImage=box.querySelector('img'),count=box.querySelector('.lightbox-count');
@@ -19,9 +19,9 @@
   img.onload=()=>{loaded.add(file);refreshAvailable()};
   img.onerror=()=>b.remove();b.append(img);b.addEventListener('click',()=>open(available.indexOf(file)));grid.append(b);
  });
- videos.forEach((file,i)=>{
+ videos.forEach(({file,poster},i)=>{
   const item=document.createElement('div');item.className='masonry-item gallery-video';
-  const v=document.createElement('video');v.src=url(file);v.poster=url('poster.jpg');v.preload='none';v.muted=true;v.playsInline=true;
+  const v=document.createElement('video');v.src=url(file);v.poster=url(poster);v.preload='none';v.muted=true;v.playsInline=true;
   const play=document.createElement('button');play.type='button';play.className='gallery-play';play.setAttribute('aria-label','Play video '+(i+1));play.innerHTML='<span aria-hidden="true">▶</span>';
   const stop=()=>{v.pause();v.controls=false;play.hidden=false;play.focus()};
   play.addEventListener('click',()=>{v.controls=true;v.muted=false;play.hidden=true;v.play().catch(()=>{v.controls=false;play.hidden=false})});
