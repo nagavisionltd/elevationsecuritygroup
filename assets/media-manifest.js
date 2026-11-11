@@ -23,6 +23,10 @@
   {id:'photo-march-2026',type:'image',src:'gallery/2026-gallery/IMG-20260321-WA0047.jpg',alt:'Security team member at an MMA event',gallery:true,home:false,galleryOrder:16},
   {id:'photo-poster-dec-2026',type:'image',src:'gallery/2026-gallery/IMG-20261007-WA0002.jpg',alt:'Boxing event promotional poster',gallery:true,home:false,galleryOrder:17},
   {id:'photo-event-sept-2026',type:'image',src:'gallery/2026-gallery/IMG-20261009-WA0019.jpg',alt:'Boxing event promotional display',gallery:true,home:true,galleryOrder:18,homeOrder:12}
+  ,{id:'photo-06',type:'image',src:'gallery/2026-gallery/gallery-6.webp',alt:'Close protection at a live event',gallery:true,home:false,galleryOrder:19}
+  ,{id:'photo-09',type:'image',src:'gallery/2026-gallery/gallery-9.webp',alt:'Boxing and MMA event security',gallery:true,home:false,galleryOrder:20}
+  ,{id:'photo-12',type:'image',src:'gallery/2026-gallery/gallery-12.webp',alt:'Door supervision at a venue',gallery:true,home:false,galleryOrder:21}
+  ,{id:'photo-13',type:'image',src:'gallery/2026-gallery/gallery-13.webp',alt:'Festival and event security',gallery:true,home:false,galleryOrder:22}
  ];
  window.ELEVATION_MEDIA=Object.freeze(media.map(item=>Object.freeze(item)));
  const byId=new Map(media.map(item=>[item.id,item]));
