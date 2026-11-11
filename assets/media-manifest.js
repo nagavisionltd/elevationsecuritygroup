@@ -12,7 +12,7 @@
   {id:'photo-04',type:'image',src:'gallery/2026-gallery/gallery-4.webp',alt:'Michael Quinn with a guest at a live event',gallery:true,home:true,galleryOrder:5,homeOrder:4},
   {id:'photo-05',type:'image',src:'gallery/2026-gallery/gallery-5.webp',alt:'Michael Quinn with a guest at an event',gallery:true,home:true,galleryOrder:6,homeOrder:6},
   {id:'video-16',type:'video',src:'gallery/2026-gallery/VID-20261009-WA0016.mp4',alt:'Elevation Security Group event footage',gallery:true,home:true,galleryOrder:7,homeOrder:8},
-  {id:'photo-07',type:'image',src:'gallery/2026-gallery/gallery-7.webp',alt:'Michael Quinn with a guest at a venue',gallery:true,home:false,galleryOrder:8},
+  {id:'photo-07',type:'image',src:'gallery/2026-gallery/gallery-7.webp',alt:'Michael Quinn with a guest at a venue',gallery:true,home:true,galleryOrder:8,homeOrder:13},
   {id:'video-17',type:'video',src:'gallery/2026-gallery/VID-20261009-WA0017.mp4',alt:'Elevation Security Group event footage',gallery:true,home:true,galleryOrder:9,homeOrder:10},
   {id:'photo-08',type:'image',src:'gallery/2026-gallery/gallery-8.webp',alt:'Michael Quinn with a guest in a hotel setting',gallery:true,home:true,galleryOrder:10,homeOrder:7},
   {id:'video-18',type:'video',src:'gallery/2026-gallery/VID-20261009-WA0018.mp4',alt:'Elevation Security Group event footage',gallery:true,home:false,galleryOrder:11},
@@ -20,15 +20,15 @@
   {id:'photo-11',type:'image',src:'gallery/2026-gallery/gallery-11.webp',alt:'Michael Quinn with a guest',gallery:true,home:true,galleryOrder:13,homeOrder:11},
   {id:'video-20',type:'video',src:'gallery/2026-gallery/VID-20261009-WA0020.mp4',alt:'Elevation Security Group event footage',gallery:true,home:false,galleryOrder:14},
   {id:'video-whatsapp-2026-11-10',type:'video',src:'gallery/2026-gallery/WhatsApp Video 2026-11-10 at 5.17.16 PM.mp4',alt:'Elevation Security Group event footage',gallery:true,home:false,galleryOrder:15},
-  {id:'photo-march-2026',type:'image',src:'gallery/2026-gallery/IMG-20260321-WA0047.jpg',alt:'Security team member at an MMA event',gallery:true,home:false,galleryOrder:16},
-  {id:'photo-poster-dec-2026',type:'image',src:'gallery/2026-gallery/IMG-20261007-WA0002.jpg',alt:'Boxing event promotional poster',gallery:true,home:false,galleryOrder:17},
+  {id:'photo-march-2026',type:'image',src:'gallery/2026-gallery/IMG-20260321-WA0047.jpg',alt:'Security team member at an MMA event',gallery:true,home:true,galleryOrder:16,homeOrder:14},
+  {id:'photo-poster-dec-2026',type:'image',src:'gallery/2026-gallery/IMG-20261007-WA0002.jpg',alt:'Boxing event promotional poster',gallery:true,home:true,galleryOrder:17,homeOrder:15},
   {id:'photo-event-sept-2026',type:'image',src:'gallery/2026-gallery/IMG-20261009-WA0019.jpg',alt:'Boxing event promotional display',gallery:true,home:true,galleryOrder:18,homeOrder:12}
-  ,{id:'photo-06',type:'image',src:'gallery/gallery-6-close-protection.webp',alt:'Close protection at a live event',gallery:true,home:false,galleryOrder:19}
-  ,{id:'photo-09',type:'image',src:'gallery/gallery-9-boxing-mma.webp',alt:'Boxing and MMA event security',gallery:true,home:false,galleryOrder:20}
-  ,{id:'photo-12',type:'image',src:'gallery/gallery-12-door-supervision.webp',alt:'Door supervision at a venue',gallery:true,home:false,galleryOrder:21}
-  ,{id:'photo-13',type:'image',src:'gallery/gallery-13-festival-event-security.webp',alt:'Festival and event security',gallery:true,home:false,galleryOrder:22}
-  ,{id:'legacy-photo-01',type:'image',src:'https://d2ol7oe51mr4n9.cloudfront.net/user_2yq6Y1r3xmBXQKJnyWl4fPnzRV5/e7e5b017-c809-400e-a74a-2c095cc8afd3.jpg',alt:'Elevation Security Group field photography',gallery:true,home:false,galleryOrder:23}
-  ,{id:'legacy-photo-02',type:'image',src:'https://d2ol7oe51mr4n9.cloudfront.net/user_2yq6Y1r3xmBXQKJnyWl4fPnzRV5/5ad860df-228e-40bc-a67c-5f35110c9309.jpg',alt:'Elevation Security Group field photography',gallery:true,home:false,galleryOrder:24}
+  ,{id:'photo-06',type:'image',src:'gallery/gallery-6-close-protection.webp',alt:'Close protection at a live event',gallery:true,home:true,galleryOrder:19,homeOrder:16}
+  ,{id:'photo-09',type:'image',src:'gallery/gallery-9-boxing-mma.webp',alt:'Boxing and MMA event security',gallery:true,home:true,galleryOrder:20,homeOrder:17}
+  ,{id:'photo-12',type:'image',src:'gallery/gallery-12-door-supervision.webp',alt:'Door supervision at a venue',gallery:true,home:true,galleryOrder:21,homeOrder:18}
+  ,{id:'photo-13',type:'image',src:'gallery/gallery-13-festival-event-security.webp',alt:'Festival and event security',gallery:true,home:true,galleryOrder:22,homeOrder:19}
+  ,{id:'legacy-photo-01',type:'image',src:'https://d2ol7oe51mr4n9.cloudfront.net/user_2yq6Y1r3xmBXQKJnyWl4fPnzRV5/e7e5b017-c809-400e-a74a-2c095cc8afd3.jpg',alt:'Elevation Security Group field photography',gallery:true,home:true,galleryOrder:23,homeOrder:20}
+  ,{id:'legacy-photo-02',type:'image',src:'https://d2ol7oe51mr4n9.cloudfront.net/user_2yq6Y1r3xmBXQKJnyWl4fPnzRV5/5ad860df-228e-40bc-a67c-5f35110c9309.jpg',alt:'Elevation Security Group field photography',gallery:true,home:true,galleryOrder:24,homeOrder:21}
  ];
  window.ELEVATION_MEDIA=Object.freeze(media.map(item=>Object.freeze(item)));
  const byId=new Map(media.map(item=>[item.id,item]));
