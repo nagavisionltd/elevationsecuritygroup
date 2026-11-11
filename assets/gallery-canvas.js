@@ -5,7 +5,7 @@
  if(!viewport||!grid||!trigger)return;
  const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
  const gsap=window.gsap;
- let active=false,scale=1,x=0,y=0,pointer=null,lastX=0,lastY=0,downX=0,downY=0,lastTime=0,vx=0,vy=0,moved=false,suppressClick=false;
+ let active=false,scale=1,x=0,y=0,pointer=null,captureTarget=null,lastX=0,lastY=0,downX=0,downY=0,lastTime=0,vx=0,vy=0,moved=false,suppressClick=false;
  let naturalWidth=0,naturalHeight=0;
  const clamp=(v,min,max)=>Math.max(min,Math.min(max,v));
  const set=()=>{grid.style.transform='translate3d('+x+'px,'+y+'px,0) scale('+scale+')'};
@@ -54,7 +54,7 @@
  viewport.addEventListener('pointerdown',e=>{
   if(!active||e.target.closest('.gallery-canvas-ui'))return;
   pointer=e.pointerId;moved=false;downX=lastX=e.clientX;downY=lastY=e.clientY;lastTime=performance.now();vx=vy=0;
-  viewport.setPointerCapture(pointer);
+  captureTarget=e.target.closest('.gallery-tile')||viewport;if(captureTarget.setPointerCapture)captureTarget.setPointerCapture(pointer);
  });
  viewport.addEventListener('pointermove',e=>{
   if(pointer!==e.pointerId||!active)return;
@@ -65,7 +65,7 @@
  const end=e=>{
   if(pointer!==e.pointerId)return;
   if(moved){suppressClick=true;setTimeout(()=>suppressClick=false,80);}
-  pointer=null;viewport.classList.remove('is-dragging');
+  pointer=null;captureTarget=null;viewport.classList.remove('is-dragging');
   if(moved&&!reduce){const targetX=x+clamp(vx*170,-150,150),targetY=y+clamp(vy*170,-150,150);if(gsap)gsap.to(grid,{x:targetX,y:targetY,duration:.65,ease:'power3.out',overwrite:true,onComplete:set});else{x=targetX;y=targetY;set()}}
  };
  viewport.addEventListener('pointerup',end);
