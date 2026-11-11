@@ -27,6 +27,8 @@
   ,{id:'photo-09',type:'image',src:'gallery/2026-gallery/gallery-9.webp',alt:'Boxing and MMA event security',gallery:true,home:false,galleryOrder:20}
   ,{id:'photo-12',type:'image',src:'gallery/2026-gallery/gallery-12.webp',alt:'Door supervision at a venue',gallery:true,home:false,galleryOrder:21}
   ,{id:'photo-13',type:'image',src:'gallery/2026-gallery/gallery-13.webp',alt:'Festival and event security',gallery:true,home:false,galleryOrder:22}
+  ,{id:'legacy-photo-01',type:'image',src:'https://d2ol7oe51mr4n9.cloudfront.net/user_2yq6Y1r3xmBXQKJnyWl4fPnzRV5/e7e5b017-c809-400e-a74a-2c095cc8afd3.jpg',alt:'Elevation Security Group field photography',gallery:true,home:false,galleryOrder:23}
+  ,{id:'legacy-photo-02',type:'image',src:'https://d2ol7oe51mr4n9.cloudfront.net/user_2yq6Y1r3xmBXQKJnyWl4fPnzRV5/5ad860df-228e-40bc-a67c-5f35110c9309.jpg',alt:'Elevation Security Group field photography',gallery:true,home:false,galleryOrder:24}
  ];
  window.ELEVATION_MEDIA=Object.freeze(media.map(item=>Object.freeze(item)));
  const byId=new Map(media.map(item=>[item.id,item]));
