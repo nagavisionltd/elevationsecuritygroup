@@ -233,3 +233,39 @@ button:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
 #gallery-grid .gallery-tile.gallery-video-tile{cursor:pointer}
 @media(max-width:700px){.preview-lightbox{padding:58px 12px 18px}.preview-lightbox .preview-stage{width:100%;height:72svh;max-height:calc(100svh - 130px)}.preview-lightbox .lightbox-close{top:10px;right:12px;width:40px;height:40px}.preview-lightbox .lightbox-prev,.preview-lightbox .lightbox-next{width:38px;height:38px;font-size:25px}.preview-lightbox .preview-caption{width:100%;min-height:40px;padding-top:10px;gap:10px}.preview-lightbox .preview-media-label{display:none}.preview-lightbox .lightbox-full-link{font-size:9px}}
 @media(prefers-reduced-motion:reduce){.preview-lightbox,.preview-lightbox *{scroll-behavior:auto!important;transition:none!important}}
+
+
+/* Consistent media framing: photo and video thumbnails share the same filled tile */
+.gallery-preview-rail .preview-image,
+#gallery-grid .gallery-tile{
+  min-width:0;
+  min-height:0;
+  padding:0;
+  border:0;
+  overflow:hidden;
+}
+.gallery-preview-rail .preview-image img,
+.gallery-preview-rail .preview-image video,
+.gallery-preview-rail .preview-image .preview-thumb,
+#gallery-grid .gallery-tile img,
+#gallery-grid .gallery-tile video,
+#gallery-grid .gallery-tile .gallery-video-preview{
+  display:block;
+  width:100%;
+  height:100%;
+  min-width:100%;
+  min-height:100%;
+  max-width:none;
+  max-height:none;
+  object-fit:cover;
+  object-position:center;
+  background:#111820;
+}
+.gallery-preview-rail .preview-video-tile video,
+#gallery-grid .gallery-video-tile video{
+  pointer-events:none;
+}
+.gallery-preview-rail .preview-video-tile .preview-play,
+#gallery-grid .gallery-video-tile .gallery-tile-play{
+  z-index:2;
+}
