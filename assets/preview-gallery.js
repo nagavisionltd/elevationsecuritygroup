@@ -1,1 +1,31 @@
-(()=>{const dialog=document.querySelector('#preview-lightbox');if(!dialog)return;const images=['gallery-2.webp','gallery-3.webp','gallery-4.webp','gallery-5.webp','gallery-6.webp','gallery-7.webp','gallery-8.webp','gallery-9.webp','gallery-10.webp','gallery-11.webp','gallery-12.webp','gallery-13.webp','IMG-20260321-WA0047.jpg','IMG-20261007-WA0002.jpg','IMG-20261009-WA0019.jpg'];const base=new URL('gallery/2026-gallery/',document.baseURI);const image=dialog.querySelector('img');const count=dialog.querySelector('.lightbox-count');let active=0;const show=i=>{active=(i+images.length)%images.length;image.src=new URL(encodeURIComponent(images[active]),base).href;image.alt='Elevation Security Group gallery photograph '+(active+1);count.textContent=String(active+1).padStart(2,'0')+' / '+String(images.length).padStart(2,'0')};const close=()=>{dialog.classList.remove('open');dialog.setAttribute('aria-hidden','true');image.src='';document.body.style.overflow=''};document.querySelectorAll('[data-preview-index]').forEach(button=>button.addEventListener('click',()=>{show(Number(button.dataset.previewIndex));dialog.classList.add('open');dialog.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';dialog.querySelector('.lightbox-close').focus()}));dialog.querySelector('.lightbox-close').addEventListener('click',close);dialog.querySelector('.lightbox-prev').addEventListener('click',()=>show(active-1));dialog.querySelector('.lightbox-next').addEventListener('click',()=>show(active+1));dialog.addEventListener('click',e=>{if(e.target===dialog)close()});document.addEventListener('keydown',e=>{if(!dialog.classList.contains('open'))return;if(e.key==='Escape')close();if(e.key==='ArrowLeft')show(active-1);if(e.key==='ArrowRight')show(active+1)});})();
+(()=> {
+ const dialog=document.querySelector('#preview-lightbox');
+ const items=[...document.querySelectorAll('.gallery-preview-rail [data-preview-index]')];
+ if(!dialog||!items.length)return;
+ const base=new URL('gallery/2026-gallery/',document.baseURI);
+ const stage=dialog.querySelector('.preview-stage'),image=stage.querySelector('img'),video=stage.querySelector('video'),count=dialog.querySelector('.lightbox-count'),label=dialog.querySelector('.preview-media-label');
+ let active=0,returnFocus=null;
+ const asset=name=>new URL(encodeURIComponent(name),base).href;
+ const stopVideo=()=>{video.pause();video.removeAttribute('src');video.removeAttribute('poster');video.load();video.hidden=true};
+ const show=i=>{
+  active=(i+items.length)%items.length;
+  const item=items[active],kind=item.dataset.media||'image',src=item.dataset.src;
+  stopVideo();image.hidden=true;
+  if(kind==='video'){
+   video.hidden=false;video.src=asset(src);video.poster=asset(item.dataset.poster||'poster.jpg');video.load();video.play().catch(()=>{});
+   label.textContent='ELEVATION / MOTION';
+  }else{
+   video.hidden=true;image.hidden=false;image.src=asset(src);image.alt=item.querySelector('img')?.alt||'Elevation Security Group gallery photograph';
+   label.textContent='ELEVATION / PHOTOGRAPHY';
+  }
+  count.textContent=String(active+1).padStart(2,'0')+' / '+String(items.length).padStart(2,'0');
+ };
+ const open=i=>{returnFocus=document.activeElement;show(i);dialog.classList.add('open');dialog.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';dialog.querySelector('.lightbox-close').focus()};
+ const close=()=>{dialog.classList.remove('open');dialog.setAttribute('aria-hidden','true');stopVideo();image.removeAttribute('src');document.body.style.overflow='';returnFocus?.focus()};
+ items.forEach((item,i)=>item.addEventListener('click',()=>open(i)));
+ dialog.querySelector('.lightbox-close').addEventListener('click',close);
+ dialog.querySelector('.lightbox-prev').addEventListener('click',()=>show(active-1));
+ dialog.querySelector('.lightbox-next').addEventListener('click',()=>show(active+1));
+ dialog.addEventListener('click',e=>{if(e.target===dialog)close()});
+ document.addEventListener('keydown',e=>{if(!dialog.classList.contains('open'))return;if(e.key==='Escape')close();if(e.key==='ArrowLeft')show(active-1);if(e.key==='ArrowRight')show(active+1)});
+})();
